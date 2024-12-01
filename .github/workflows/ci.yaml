@@ -26,3 +26,28 @@ jobs:
 
       - name: Run lint
         run: npm run lint
+
+  test:
+    name: Unit Tests
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.11.0
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run tests
+        run: ng test --watch=false --code-coverage
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: coverage
