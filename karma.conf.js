@@ -10,6 +10,7 @@ module.exports = function (config) {
       require('karma-chrome-launcher'),
       require('@angular-devkit/build-angular/plugins/karma')
     ],
+    browsers: ['ChromeHeadless'],
     customLaunchers: {
       ChromeHeadless: {
         base: 'Chrome',
@@ -21,6 +22,5 @@ module.exports = function (config) {
         ]
       }
     },
-    browsers: ['Chrome'],
   });
 };
