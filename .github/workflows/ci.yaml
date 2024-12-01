@@ -40,11 +40,11 @@ jobs:
         with:
           node-version: 20.11.0
 
-      - name: Install Chrome
-        run: |
-          npm install
-          wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_125.0.6422.76-1_amd64.deb
-          sudo apt-get install ./google-chrome-stable_125.0.6422.76-1_amd64.deb  -y --allow-downgrades
+      # - name: Install Chrome
+      #   run: |
+      #     npm install
+      #     wget https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_125.0.6422.76-1_amd64.deb
+      #     sudo apt-get install ./google-chrome-stable_125.0.6422.76-1_amd64.deb  -y --allow-downgrades
 
       - name: Install dependencies
         run: npm install
